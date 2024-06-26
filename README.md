@@ -83,5 +83,4 @@ As a user,
 (VolunteerHub - GA Unit 3 Project) \* Add link
 
 ## Trello board
-
 https://trello.com/b/7MWjfIRH/sprint-retrospective-template-trello
