@@ -60,6 +60,15 @@ As a user,
 - I want to see a map of the event location.
 - I want to post photos from the volunteer events I attended.
 
+## Team roles
+
+- Github Manager: Zala
+- Deployment: Zala
+- Designer: Zala
+- Database Manager: John
+- Documenter: Mutsumi
+- Code: Mutsumi, John, Zala
+
 ## Pitch deck
 
 (VolunteerHub - GA Unit 3 Project) \* Add link
