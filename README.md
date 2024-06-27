@@ -1,9 +1,45 @@
 # VolunteerHub
+A community volunteering event application where users can organise volunteering events and volunteer.
+
+## URL
+
+(Add link)
+
+## App image
+
+![log-in screen]()
+![Image of event list]()
+![Image of creating an event]()
+
+## Wireframe
+![Wireframes](photos-read-me/Wireframes.png)
+
+## Entity relationship diagram
+![ERD](photos-read-me/ERD.png)
+
+## Technologies Used
+
+- Python
+- Django
+- CSS
+- PostgreSQL
+- Render
+- Trello board
+
+## MVP
+
+- Log in/out feature
+- Volunteering event information view available only for logged-in users
+- Participating and withdrawing from an event
+- Like/Unlike feature
+- Event participation history for users
+- Volunteering event list (date and time order)
+- Event details view (number and names of volunteers)
+- Volunteering event creation feature (edit/delete available only to organiser)
+- List of volunteering evnets that the user created
+- Event donation (cash) feature
 
 ## User Stories
-
-An event organising app for volunteer events. Users can join and/or create and organise a volunteering event.
-
 As a user,
 
 - I want to be able to sign up, log in and out of the application.
@@ -18,37 +54,10 @@ As a user,
 - I want to be able to create/organise a volunteering event.
 - I want to be the only user that can edit and delete event(s) I have created.
 - I want to be able to easily see all the events I have created/organised.
-
-## URL
-
-(Add link)
-
-## App image
-
-![log-in screen]()
-![Image of event list]()
-![Image of creating an event]()
-
-## Wireframe
-
-(Needs work)
-
-## Entity relationship diagram
-
-(Show ERD, Add link)
-
-## Technologies Used
-
-- Python
-- Django
-- CSS
-- PostgreSQL
-- Render
-- Trello board
-
-## MVP
-
-- (Discuss with team)
+- I want to be able to decide to donate/not to donate to an event. I want to be able to select donation amount from choices.
+- I want to see donated amount for an event in the all events list and event details.
+- I want to be able to set a donation goal for my event when creating an event.
+- I want to see donation goal and donated amount for the events that I organised.
 
 ## Ice box
 
@@ -67,7 +76,7 @@ As a user,
 - Designer: Zala
 - Database Manager: John
 - Documenter: Mutsumi
-- Code: Mutsumi, John, Zala
+- Code: John, Zala, Mutsumi
 
 ## Pitch deck
 
