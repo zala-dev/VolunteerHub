@@ -32,3 +32,11 @@ class Like(models.Model):
 
     def __str__(self):
         return f"{self.user.username} likes {self.event.title}"
+
+class Donation(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    event = models.ForeignKey('VolunteeringEvent', on_delete=models.CASCADE)
+    amount = models.PositiveIntegerField()
+
+    def __str__(self):
+        return f"{self.user.username} donated ${self.amount} to {self.event.title}"
