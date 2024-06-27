@@ -3,6 +3,14 @@ from django.urls import reverse
 from datetime import datetime, date
 from django.contrib.auth.models import User
 
+DONATIONS = (
+    (0, '$0'),
+    (20, '$20'),
+    (50, '$50'),
+    (100, '$100'),
+    (200, '$200')
+)
+
 class VolunteeringEvent(models.Model):
 
     def default_time():
@@ -35,8 +43,11 @@ class Like(models.Model):
 
 class Donation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    event = models.ForeignKey('VolunteeringEvent', on_delete=models.CASCADE)
-    amount = models.PositiveIntegerField()
+    event = models.ForeignKey(VolunteeringEvent, on_delete=models.CASCADE)
+    amount = models.PositiveIntegerField(
+        choices=DONATIONS,
+        default=DONATIONS[0][0]
+    )
 
     def __str__(self):
         return f"{self.user.username} donated ${self.amount} to {self.event.title}"
