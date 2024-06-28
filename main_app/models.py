@@ -41,6 +41,11 @@ class VolunteeringEvent(models.Model):
         donors = [donation.user.username for donation in donations]
         return donors
     
+    def donor_count(self):
+        donations = Donation.objects.filter(event_id=self.id).all()
+        number_of_donors = donations.count()
+        return number_of_donors
+    
     def get_absolute_url(self):
         return reverse('event_detail', kwargs={'pk': self.id})
 
