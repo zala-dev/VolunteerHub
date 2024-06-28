@@ -33,9 +33,13 @@ class VolunteeringEvent(models.Model):
     
     def donation_amount(self):
         donations = Donation.objects.filter(event_id=self.id).all()
-        print(donations)
         total_donation=sum(donation.amount for donation in donations)
         return total_donation
+    
+    def donor_names(self):
+        donations = Donation.objects.filter(event_id=self.id).all()
+        donors = [donation.user.username for donation in donations]
+        return donors
     
     def get_absolute_url(self):
         return reverse('event_detail', kwargs={'pk': self.id})

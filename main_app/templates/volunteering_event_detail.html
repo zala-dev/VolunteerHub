@@ -16,10 +16,19 @@
         <p>Volunteers Needed: {{ event.volunteers_needed }}</p>
         <p>No of Volunteers: {{ event.volunteer_count }}</p>
         Volunteer Names: {% for volunteer in event.volunteers.all %}
-        <li>{{ volunteer.username }}</li>
+          <li>{{ volunteer.username }}</li>
         {% empty %}
-        <li>No volunteers yet</li>
+          <li>No volunteers yet</li>
         {% endfor %}
+        <p>Donated Amount: ${{ event.donation_amount }}</p>
+        <p>Donors: </p>
+        {% for donor in event.donor_names %}
+        <li>{{ donor }}</li>
+        {% empty %}
+        <li>No donors yet</li>
+        {% endfor %}
+
+        
       </div>
       <div class="card-action">
         <a href="{% url 'all_events' %}">Back</a>
