@@ -3,6 +3,7 @@ from django.urls import reverse_lazy
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import VolunteeringEvent, Like, Donation
+from .forms import DonationForm
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -105,6 +106,12 @@ class VolunteeringEventDetailView(LoginRequiredMixin, DetailView):
     template_name = 'volunteering_event_detail.html'
     context_object_name = 'event'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user = self.request.user
+        context['donation_form'] = DonationForm()
+        return context
+
 # method for logged in user to volunteer for an event. Redirect back to the current page. 
 @login_required
 def add_volunteer(request, event_id):
@@ -133,6 +140,14 @@ def like_event(request, event_id):
 def unlike_event(request, event_id):
     event = get_object_or_404(VolunteeringEvent, id=event_id)
     Like.objects.filter(user=request.user, event=event).delete()
+    return redirect(request.META.get('HTTP_REFERER', '/'))
+
+@login_required
+def add_donation(request, event_id):
+    event = get_object_or_404(VolunteeringEvent, id=event_id)
+    form = DonationForm(request.POST)
+    if form.is_valid():
+        donation = Donation(user=request.user, event=event, amount=form.cleaned_data["amount"]).save()
     return redirect(request.META.get('HTTP_REFERER', '/'))
 
 # signup to use the application. Successful sign up will redirect to the list of all volunteering events. 

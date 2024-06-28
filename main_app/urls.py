@@ -13,6 +13,7 @@ urlpatterns = [
     path('my-events/', views.MyVolunteeringEventsListView.as_view(), name='my_events'),
     path('all-events/', views.AllVolunteeringEventsListView.as_view(), name='all_events'),
     path('all-events/<int:pk>/', views.VolunteeringEventDetailView.as_view(), name='volunteering_event_detail'),
+    path('all-events/<int:event_id>/add_donation/', views.add_donation, name='add_donation'),
     path('like/<int:event_id>/', views.like_event, name='like_event'),
     path('unlike/<int:event_id>/', views.unlike_event, name='unlike_event'),
     path('accounts/signup/', views.signup, name='signup')

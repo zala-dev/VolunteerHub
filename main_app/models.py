@@ -36,10 +36,9 @@ class VolunteeringEvent(models.Model):
         total_donation=sum(donation.amount for donation in donations)
         return total_donation
     
-    def donor_names(self):
+    def donations(self):
         donations = Donation.objects.filter(event_id=self.id).all()
-        donors = [donation.user.username for donation in donations]
-        return donors
+        return [donation for donation in donations]
     
     def donor_count(self):
         donations = Donation.objects.filter(event_id=self.id).all()
