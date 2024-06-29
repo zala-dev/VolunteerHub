@@ -22,6 +22,7 @@
         {% endfor %}
         <p>Donation Goal: ${{ event.donation_goal }}</p>
         <p>Donations Raised: ${{ event.donation_amount }}</p>
+        <p>Donation Target Complete (%): {{ event.donation_percentage_reached }}</p>
         <p>Donate to this event</p>
         <form action="/all-events/{{ event.id }}/add_donation/" method="POST">
             {% csrf_token %}

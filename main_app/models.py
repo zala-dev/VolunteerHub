@@ -40,6 +40,17 @@ class VolunteeringEvent(models.Model):
     def donations(self):
         donations = Donation.objects.filter(event_id=self.id).all()
         return [donation for donation in donations]
+
+    def donation_percentage_reached(self):
+        donations = Donation.objects.filter(event_id=self.id).all()
+        total_donation=sum(donation.amount for donation in donations)
+        if total_donation == 0: 
+            percentage = 0 
+        elif self.donation_goal == 0:
+            percentage = "No goal set"
+        else: 
+            percentage = round((total_donation / self.donation_goal) * 100)
+        return percentage
     
     def donor_count(self):
         donations = Donation.objects.filter(event_id=self.id).all()

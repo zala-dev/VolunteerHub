@@ -18,6 +18,7 @@
         <p>No of Volunteers: {{ event.volunteer_count }}</p>
         <p>Donation Goal: ${{ event.donation_goal }}</p>
         <p>Donations Raised: ${{ event.donation_amount }}</p>
+        <p>Donation Target Complete (%): {{ event.donation_percentage_reached }}</p>
       </div>
       <div class="card-action">
         <a href="{% url 'volunteering_event_detail' event.id %}">View</a>
