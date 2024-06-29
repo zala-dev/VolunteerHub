@@ -142,12 +142,13 @@ def unlike_event(request, event_id):
     Like.objects.filter(user=request.user, event=event).delete()
     return redirect(request.META.get('HTTP_REFERER', '/'))
 
+# method for logged in user to donate money to an event. Redirect back to the current page. 
 @login_required
 def add_donation(request, event_id):
     event = get_object_or_404(VolunteeringEvent, id=event_id)
     form = DonationForm(request.POST)
     if form.is_valid():
-        donation = Donation(user=request.user, event=event, amount=form.cleaned_data["amount"]).save()
+        Donation(user=request.user, event=event, amount=form.cleaned_data["amount"]).save()
     return redirect(request.META.get('HTTP_REFERER', '/'))
 
 # signup to use the application. Successful sign up will redirect to the list of all volunteering events. 
