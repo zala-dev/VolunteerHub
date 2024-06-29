@@ -39,7 +39,7 @@ class EventDetailView(LoginRequiredMixin, DetailView):
 class EventCreateView(LoginRequiredMixin, CreateView):
     model = VolunteeringEvent
     template_name = 'event_form.html'
-    fields = ['title', 'description', 'date', 'time', 'location', 'volunteers_needed']
+    fields = ['title', 'description', 'date', 'time', 'location', 'volunteers_needed', 'donation_goal']
     success_url = reverse_lazy('event_list')
 
 # make sure the form is valid and add the logged in user id to the data. 
@@ -51,7 +51,7 @@ class EventCreateView(LoginRequiredMixin, CreateView):
 class EventUpdateView(LoginRequiredMixin, UpdateView):
     model = VolunteeringEvent
     template_name = 'event_form.html'
-    fields = ['title', 'description', 'date', 'time', 'location', 'volunteers_needed']
+    fields = ['title', 'description', 'date', 'time', 'location', 'volunteers_needed', 'donation_goal']
     success_url = reverse_lazy('event_list')
 
 # if the event has not be created by the logged in user return a 403 error. 

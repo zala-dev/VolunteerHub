@@ -22,6 +22,7 @@ class VolunteeringEvent(models.Model):
     time = models.TimeField(default=default_time)
     location = models.CharField(max_length=255)
     volunteers_needed = models.PositiveIntegerField(default=1)
+    donation_goal = models.PositiveIntegerField(default=0)
     organizer = models.ForeignKey(User, on_delete=models.CASCADE, related_name='organized_events')
     volunteers = models.ManyToManyField(User, related_name='volunteering_events', blank=True)
 

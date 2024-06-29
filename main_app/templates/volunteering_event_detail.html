@@ -20,15 +20,14 @@
         {% empty %}
           <li>No volunteers yet</li>
         {% endfor %}
-        <p>Donation raised: ${{ event.donation_amount }}</p>
+        <p>Donation Goal: ${{ event.donation_goal }}</p>
+        <p>Donations Raised: ${{ event.donation_amount }}</p>
         <p>Donate to this event</p>
-        
         <form action="/all-events/{{ event.id }}/add_donation/" method="POST">
             {% csrf_token %}
             {{ donation_form }}
           <input type="submit" value="Add donation" class="btn" />
         </form>
-
         <p>Donors: </p>
         {% for donation in event.donations %}
         <li>{{ donation.user.username }} ${{ donation.amount }}</li>
