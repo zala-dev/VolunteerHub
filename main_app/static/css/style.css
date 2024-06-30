@@ -1,37 +1,45 @@
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-  
-  main {
-    flex: 1 0 auto;
-  }
-  
-  footer.page-footer {
-    padding-top: 0;
-    text-align: center;
-    background-color: rgb(102,181,142)
-  }
+/* Web Fonts - Changa One and DM Sans */
+@import url("https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
-  nav {
-    background-color: rgb(102,181,142)
-  }
+/* CSS variables */
 
-#withdraw, #unlike {
-  background-color: red;
-  color: white;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-  border-radius: 5px;
+:root {
+  --color-primary: #ff7151;
+  --color-primary-dark: #dc5a3d;
+  --color-secondary: #164c64;
+  --color-white: #f5f5f5;
+  --color-dark: #111;
+  --hero-heading-size: 4.8rem;
+  --hero-subheading-size: 2.4rem;
+  --font-primary: "Changa One", sans-serif;
+  --font-secondary: "DM Sans", sans-serif;
 }
 
-#volunteer, #like {
-  background-color: green;
-  color: white;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-  border-radius: 5px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+
+  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.5)),
+    rgba(0, 0, 0, 0.2) url("../images/landing-page.jpg") no-repeat center/cover;
+
+  -webkit-backdrop-filter: blur(0.15rem);
+
+  backdrop-filter: blur(0.15rem);
+
+  font-family: var(--font-secondary);
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: var(--color-white);
 }
