@@ -1,47 +1,67 @@
 {% extends 'base.html' %} {% block content %}
-
-<h1>Event Details</h1>
-
-<div class="row">
-  <div class="col s6 col-offset-3">
-    <div class="card">
-      <div class="card-content">
-        <span class="card-title">{{ event.title }}</span>
-        <p>Description: {{ event.description }}</p>
-        <p>Date: {{ event.date }}</p>
-        <p>Time: {{ event.time }}</p>
-        <p>Location: {{ event.location }}</p>
-        <p>Organizer: {{ event.organizer }}</p>
-        <p>Likes: {{ event.like_set.count }}</p>
-        <p>Volunteers Needed: {{ event.volunteers_needed }}</p>
-        <p>No of Volunteers: {{ event.volunteer_count }}</p>
-        Volunteer Names: {% for volunteer in event.volunteers.all %}
-          <li>{{ volunteer.username }}</li>
-        {% empty %}
-          <li>No volunteers yet</li>
-        {% endfor %}
-        <p>Donation Goal: ${{ event.donation_goal }}</p>
-        <p>Donations Raised: ${{ event.donation_amount }}</p>
-        <p>Donation Target Complete (%): {{ event.donation_percentage_reached }}</p>
-        <p>Donate to this event</p>
-        <form action="/all-events/{{ event.id }}/add_donation/" method="POST">
-            {% csrf_token %}
-            {{ donation_form }}
-          <input type="submit" value="Add donation" class="btn" />
-        </form>
-        <p>Donors: </p>
-        {% for donation in event.donations %}
-        <li>{{ donation.user.username }} ${{ donation.amount }}</li>
-        {% empty %}
-        <li>No donors yet</li>
-        {% endfor %}
-
-        
-      </div>
-      <div class="card-action">
-        <a href="{% url 'all_events' %}">Back</a>
-      </div>
+<div class="events-container">
+  <h1>Event Details</h1>
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">
+        {{ event.title }}</span>
+      <p>Description:
+        {{ event.description }}
+      </p>
+      <p>Date & Time:
+        {{ event.date }},
+        {{ event.time }}
+      </p>
+      <p>Location:
+        {{ event.location }}
+      </p>
+      <p>Organizer:
+        {{ event.organizer }}
+      </p>
+      <p>Likes:
+        {{ event.like_set.count }}
+      </p>
+      <p>Volunteers Needed:
+        {{ event.volunteers_needed }}
+      </p>
+      <p>No of Volunteers:
+        {{ event.volunteer_count }}
+      </p>
+      Volunteer Names: {% for volunteer in event.volunteers.all %}
+      <li>
+        {{ volunteer.username }}
+      </li>
+      {% empty %}
+      <li>No volunteers yet</li>
+      {% endfor %}
+      <p>Donation Goal: $
+        {{ event.donation_goal }}
+      </p>
+      <p>Donations Raised: $
+        {{ event.donation_amount }}
+      </p>
+      <p>Donation Target Complete (%):
+        {{ event.donation_percentage_reached }}
+      </p>
+      <p>Donate to this event</p>
+      <form class="donation-form" action="/all-events/{{ event.id }}/add_donation/" method="POST">
+        {% csrf_token %}
+        {{ donation_form }}
+        <input type="submit" value="Add donation" class="btn" />
+      </form>
+      <p>Donors: </p>
+      {% for donation in event.donations %}
+      <li>
+        {{ donation.user.username }} $
+        {{ donation.amount }}
+      </li>
+      {% empty %}
+      <li>No donors yet</li>
+      {% endfor %}
+    </div>
+    <div class="card-action">
+      <a href="{% url 'all_events' %}">Back</a>
     </div>
   </div>
-  {% endblock %}
 </div>
+{% endblock %}
