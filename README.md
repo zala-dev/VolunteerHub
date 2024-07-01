@@ -7,15 +7,15 @@ A community volunteering event application where users can easily organise volun
 
 ## App image
 
-![log-in screen](photos-read-me/Login.png)
+![log-in screen](main_app/static/images/photos-read-me/Login.png)
 ![Image of event list]()
 ![Image of creating an event]()
 
 ## Wireframe
-![Wireframes](photos-read-me/Wireframes.png)
+![Wireframes](main_app/static/images/photos-read-me/Wireframes.png)
 
 ## Entity relationship diagram
-![ERD](photos-read-me/ERD.png)
+![ERD](main_app/static/images/photos-read-me/ERD.png)
 
 ## Technologies Used
 
