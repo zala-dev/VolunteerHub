@@ -8,8 +8,8 @@ A community volunteering event application where users can easily organise volun
 ## App image
 
 ![log-in screen](main_app/static/images/photos-read-me/Login.png)
-![Image of event list]()
-![Image of creating an event]()
+![Image of event list](main_app/static/images/photos-read-me/EventList.png)
+![Image of creating an event](main_app/static/images/photos-read-me/CreateEvent.png)
 
 ## Wireframe
 ![Wireframes](main_app/static/images/photos-read-me/Wireframes.png)
@@ -45,6 +45,7 @@ As a user,
 - I want to be able to see donation goal and amount raised for each event.
 - I want to be able to set a donation goal for my event when creating an event.
 - I want to be able to see the percentage completed for my donation goal.
+- I want to not add/update volunteering events to a past date.
 
 ## Ice box
 
@@ -56,6 +57,7 @@ As a user,
 - I want to be able to provide comments on events.
 - I want to see a map of the event location.
 - I want to post photos from the volunteer events I attended.
+- I want to be able to pay with Stripe or PayPal for donations.
 
 ## Team roles
 
