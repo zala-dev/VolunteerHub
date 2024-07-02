@@ -83,19 +83,8 @@ class EventUpdateView(LoginRequiredMixin, UpdateView):
             return self.handle_no_permission()
         return super().dispatch(request, *args, **kwargs)
 
-    def form_valid(self, form):
-        event_datetime = form.cleaned_date['date']
-
-        if event_datetime < timezone.now().date():
-            form.add_error('date', 'The event date cannot be in the past.')
-            messages.error(
-                self.request, 'The event date cannot be in the past.')
-            return self.form_invalid(form)
-
-        return super().form_valid(form)
-
-
 # enable a specific event to be deleted only by the user that created the event.
+
 
 class EventDeleteView(LoginRequiredMixin, DeleteView):
     model = VolunteeringEvent
