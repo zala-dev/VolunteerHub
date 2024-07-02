@@ -7,9 +7,7 @@ A community volunteering event application where users can easily organise volun
 
 ## App image
 
-![log-in screen](main_app/static/images/photos-read-me/Login.png)
-![Image of event list](main_app/static/images/photos-read-me/EventList.png)
-![Image of creating an event](main_app/static/images/photos-read-me/CreateEvent.png)
+![app images](main_app/static/images/photos-read-me/VolunteerHub_App%20Screenshots.pdf)
 
 ## Wireframe
 ![Wireframes](main_app/static/images/photos-read-me/Wireframes.png)
@@ -45,7 +43,7 @@ As a user,
 - I want to be able to see donation goal and amount raised for each event.
 - I want to be able to set a donation goal for my event when creating an event.
 - I want to be able to see the percentage completed for my donation goal.
-- I want to not add/update volunteering events to a past date.
+- I want to be prevented from creating volunteering events on a date that has already past.
 
 ## Ice box
 
@@ -71,7 +69,7 @@ As a user,
 
 ## Pitch deck
 
-(https://docs.google.com/presentation/d/1L4T_ubcK8NZy4TvZzVt9_93fR3nNefH0mmBN-HEA2gY/edit#slide=id.g274e5197dd6_1_39)
+[!Pitch deck](main_app/static/images/VolunteerHub_slide.pdf)
 
 ## Trello board
 https://trello.com/b/7MWjfIRH/sprint-retrospective-template-trello
