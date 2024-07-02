@@ -57,6 +57,13 @@ h2 {
   border-bottom: 0.1rem dotted var(--color-primary);
 }
 
+h2 span {
+  font-family: var(--font-secondary);
+  text-transform: none;
+  font-weight: 200;
+  color: var(--color-primary);
+}
+
 ul {
   list-style: none;
 }
