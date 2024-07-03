@@ -262,7 +262,7 @@ ul {
   justify-content: flex-start;
   gap: 4rem;
   height: 100%;
-  overflow: auto;
+  /* overflow: auto; */
 
   padding: 1rem 3rem 3rem 3rem;
   min-width: 40rem;
@@ -333,13 +333,14 @@ ul {
 /* main container */
 
 .container {
-  margin-top: 14vh;
-  min-height: 100vh;
+  margin: 14vh 0;
+  height: 100vh;
   width: 100vw;
 
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  overflow: auto;
 }
 
 /* Hero Page */
