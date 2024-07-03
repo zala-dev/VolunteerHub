@@ -43,7 +43,7 @@ As a user,
 - I want to be able to create/organise a volunteering event.
 - I want to be the only user that can edit and delete event(s) I have created.
 - I want to be able to easily see all the events I have created/organised.
-- I want to be able to donate (cash amount of my choice) to an event.
+- I want to be able to donate (cash amount of my choice that is greater than zero) to an event.
 - I want to be able to see donation goal and amount raised for each event.
 - I want to be able to set a donation goal for my event when creating an event.
 - I want to be able to see the percentage completed for my donation goal.
