@@ -1,4 +1,5 @@
 # VolunteerHub
+
 A community volunteering event application where users can easily organise volunteering events, volunteer and donate, all in one place.
 
 ## URL
@@ -7,12 +8,14 @@ A community volunteering event application where users can easily organise volun
 
 ## App image
 
-![app images](main_app/static/images/photos-read-me/VolunteerHub_App%20Screenshots.pdf)
+![app images](main_app/static/images/photos-read-me/VolunteerHubAppScreenshots.png)
 
 ## Wireframe
+
 ![Wireframes](main_app/static/images/photos-read-me/Wireframes.png)
 
 ## Entity relationship diagram
+
 ![ERD](main_app/static/images/photos-read-me/ERD.png)
 
 ## Technologies Used
@@ -25,6 +28,7 @@ A community volunteering event application where users can easily organise volun
 - Trello board
 
 ## User Stories / MVP
+
 As a user,
 
 - I want to be able to sign up, log in and out of the application.
@@ -72,4 +76,5 @@ As a user,
 [!Pitch deck](main_app/static/images/VolunteerHub_slide.pdf)
 
 ## Trello board
+
 https://trello.com/b/7MWjfIRH/sprint-retrospective-template-trello
