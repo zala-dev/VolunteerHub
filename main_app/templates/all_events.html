@@ -1,74 +1,32 @@
 {% extends 'base.html' %} {% block content %}
 <div class="events-container">
-
   <h2>All Volunteering Events</h2>
 
   {% for event in events %}
 
   <div class="card">
     <div class="card-content">
-      <span class="card-title">
-        {{ event.title }}</span>
-      <p>Description:
-        {{ event.description }}
-      </p>
-      <p>Date & Time:
-        {{ event.date }},
-        {{ event.time }}
-      </p>
-      <p>Location:
-        {{ event.location }}
-      </p>
-      <p>Organizer:
-        {{ event.organizer }}
-      </p>
-      <p>Likes:
-        {{ event.like_set.count }}
-      </p>
-      <p>Volunteers Needed:
-        {{ event.volunteers_needed }}
-      </p>
-      <p>No of Volunteers:
-        {{ event.volunteer_count }}
-      </p>
-      <p>Donation Goal: $
-        {{ event.donation_goal }}
-      </p>
-      <p>Donations Raised: $
-        {{ event.donation_amount }}
-      </p>
-      <p>Donation Target Complete (%):
-        {{ event.donation_percentage_reached }}
-      </p>
-
+      <span class="card-title"> {{ event.title }}</span>
+      <p>Description: {{ event.description }}</p>
+      <p>Date & Time: {{ event.date }}, {{ event.time }}</p>
+      <p>Location: {{ event.location }}</p>
+      <p>Organizer: {{ event.organizer }}</p>
+      <p>Likes: {{ event.like_set.count }}</p>
+      <p>Volunteers Needed: {{ event.volunteers_needed }}</p>
+      <p>No of Volunteers: {{ event.volunteer_count }}</p>
+      <p>Donation Goal: $ {{ event.donation_goal }}</p>
+      <p>Donations Raised: $ {{ event.donation_amount }}</p>
       <p>
-        {{ event.location }}
-      </p>
-      <p>Organised by
-        {{ event.organizer }}
-      </p>
-      <p>Likes:
-        {{ event.like_set.count }}
-      </p>
-      <p>Volunteers required:
-        {{ event.volunteers_needed }}
-      </p>
-      <p>No of Volunteers:
-        {{ event.volunteer_count }}
+        Donation Target Complete (%): {{ event.donation_percentage_reached }}
       </p>
     </div>
     <div class="card-action">
       <a href="{% url 'volunteering_event_detail' event.id %}">View</a>
       {% if event.id in liked_events %}
-      <a href="{% url 'unlike_event' event.id %}">
-        Unlike
-      </a>
+      <a href="{% url 'unlike_event' event.id %}"> Unlike </a>
       {% else %}
-      <a href="{% url 'like_event' event.id %}">
-        Like
-      </a>
-      {% endif %}
-      {% if user in event.volunteers.all %}
+      <a href="{% url 'like_event' event.id %}"> Like </a>
+      {% endif %} {% if user in event.volunteers.all %}
       <form action="{% url 'withdraw_volunteer' event.id %}" method="post">
         {% csrf_token %}
         <button id="withdraw" type="submit">Withdraw as Volunteer</button>
