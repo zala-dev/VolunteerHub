@@ -6,18 +6,39 @@
 
   <div class="card">
     <div class="card-content">
-      <span class="card-title"> {{ event.title }}</span>
-      <p>Description: {{ event.description }}</p>
-      <p>Date & Time: {{ event.date }}, {{ event.time }}</p>
-      <p>Location: {{ event.location }}</p>
-      <p>Organizer: {{ event.organizer }}</p>
-      <p>Likes: {{ event.like_set.count }}</p>
-      <p>Volunteers Needed: {{ event.volunteers_needed }}</p>
-      <p>No of Volunteers: {{ event.volunteer_count }}</p>
-      <p>Donation Goal: $ {{ event.donation_goal }}</p>
-      <p>Donations Raised: $ {{ event.donation_amount }}</p>
+      <span class="card-title">
+        {{ event.title }}</span>
+      <p>Description:
+        {{ event.description }}
+      </p>
+      <p>Date & Time:
+        {{ event.date }},
+        {{ event.time }}
+      </p>
+      <p>Location:
+        {{ event.location }}
+      </p>
+      <p>Organizer:
+        {{ event.organizer }}
+      </p>
+      <p>Likes:
+        {{ event.like_set.count }}
+      </p>
+      <p>Volunteers Needed:
+        {{ event.volunteers_needed }}
+      </p>
+      <p>No of Volunteers:
+        {{ event.volunteer_count }}
+      </p>
+      <p>Donation Goal: $
+        {{ event.donation_goal }}
+      </p>
+      <p>Donations Raised: $
+        {{ event.donation_amount }}
+      </p>
       <p>
-        Donation Target Complete (%): {{ event.donation_percentage_reached }}
+        Donation Target Complete (%):
+        {{ event.donation_percentage_reached }}
       </p>
     </div>
     <div class="card-action">
